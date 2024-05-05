@@ -50,7 +50,7 @@ app.get('/', async (req, res) => {
                 <div class="product">
                     <img src="${p.image}" alt="${p.title}">
                     <div style="text-align: center;">
-                        <a href="/products/${p.id}" class="product-link">
+                        <a href="/products/${p.id}">
                             <h3>${p.title}</h3>
                             <p>Price: ${p.price} kr</p>
                         </a>
