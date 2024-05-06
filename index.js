@@ -47,10 +47,10 @@ app.get('/', async (req, res) => {
         <div class="container">
             <h1 style="text-align: center; margin-bottom: 20px;">Världens Mest Genialiska Produkter (eller inte)</h1>
             ${products.map((p) => `
+            <a href="/products/${p.id}" class="product-link">
                 <div class="product">
                     <img src="${p.image}" alt="${p.title}">
                     <div style="text-align: center;">
-                        <a href="/products/${p.id}">
                             <h3>${p.title}</h3>
                             <p>Price: ${p.price} kr</p>
                         </a>

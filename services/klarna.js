@@ -48,7 +48,7 @@ export async function createOrder(product){
         merchant_urls: {
             terms: 'https://www.example.com/terms.html',
             checkout: 'https://www.example.com/checkout.html',
-            confirmation: `${process.env.CONFIRMATION_URL}/confirmation?order_id={checkout.order.id}`,
+            confirmation: `${process.env.CONFIRMATION_URL}?order_id={checkout.order.id}`,
             push: 'https://www.example.com/api/push'
         }
     };
@@ -77,7 +77,7 @@ export async function retrieveOrder(order_id){
     const headers = { Authorization : auth };
     const response = await fetch(url, {method, headers});
 
-    if(response.status === 200 || respone.status === 201) {
+    if(response.status === 200 || response.status === 201) {
         const json = await response.json();
         return json;
     } else {
